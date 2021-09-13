@@ -1,0 +1,25 @@
+// Nollställer styling i webbläsaren
+@import url("https://necolas.github.io/normalize.css/8.0.1/normalize.css");
+
+// Variabler
+$gradient: linear-gradient(-70deg, #fca062, #cf6593, #9258b4, #23abd5);
+$link-color: lighten(#fca062, 80);
+
+// Mixins
+@mixin desktop {
+    @media screen and (min-width: 900px){
+        @content;
+    }
+}
+
+@mixin mobile {
+    @media screen and (max-width: 500px){
+        @content;
+    }
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}

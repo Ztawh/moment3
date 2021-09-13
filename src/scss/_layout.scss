@@ -1,0 +1,78 @@
+body {
+    // background: linear-gradient(-70deg, #fca062, #cf6593, #9258b4, #23abd5);
+    background: $gradient;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    height: 100vh;
+}
+
+header {
+    height: 50vh;
+}
+
+.flex-container {
+    display: flex;
+}
+
+// Bilder
+#images {
+    display: flex;
+    justify-content: center;
+    margin: 5rem 2rem 0 2rem;
+
+
+    img {
+        width: 200px;
+        height: 200px;
+        border-radius: 50%;
+        object-fit: cover;
+    }
+}
+
+// Articles
+article {
+    max-width: 700px;
+    margin: 0 auto 7rem auto;
+
+
+    p {
+        margin-top: 1rem;
+        text-align: justify;
+    }
+}
+
+// Navigation
+nav {
+    width: 100%;
+    ul {
+        display: flex;
+        list-style-type: none;
+    }
+
+    li {
+        text-align: right;
+    }
+
+    a {
+        text-decoration: none;
+        display: flex;
+        padding: 1rem;
+        font-size: 1.5rem;
+        color: $link-color;
+        transition: ease 0.3s;
+    }
+
+    a:hover {
+        @include desktop {
+            color: darken($link-color, 20);
+            letter-spacing: 1px;
+        }
+    }
+}
+
+// Footer
+footer {
+    text-align: center;
+    padding: 2rem 2rem 6rem 2rem;
+}
