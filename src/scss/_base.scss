@@ -3,7 +3,11 @@
 
 // Variabler
 $gradient: linear-gradient(-70deg, #fca062, #cf6593, #9258b4, #23abd5);
+$gradient-dark: linear-gradient(-70deg, invert(#fca062), invert(#cf6593), invert(#9258b4), invert(#23abd5));
 $link-color: lighten(#fca062, 80);
+$footer-margin: 2rem 2rem 6rem 2rem;
+$img-right-margin: 5rem 0 0 2rem;
+$img-left-margin: 5rem 2rem 0 0;
 
 // Mixins
 @mixin desktop {
@@ -13,7 +17,13 @@ $link-color: lighten(#fca062, 80);
 }
 
 @mixin mobile {
-    @media screen and (max-width: 500px){
+    @media screen and (max-width: 550px){
+        @content;
+    }
+}
+
+@mixin darkMode {
+    @media screen and (prefers-color-scheme: dark){
         @content;
     }
 }

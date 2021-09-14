@@ -5,22 +5,49 @@ body {
     background-attachment: fixed;
     color: white;
     height: 100vh;
+
+    @include darkMode {
+        background: $gradient-dark;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        color: white;
+        height: 100vh;
+    }
+}
+
+#container {
+    max-width: 2000px;
+    margin: auto;
+}
+
+main {
+    padding: 0 1rem;
 }
 
 header {
-    height: 50vh;
+    height: 350px;
+    display: block;
 }
 
 .flex-container {
     display: flex;
+
+    @include mobile {
+        flex-direction: column;
+    }
+}
+
+#article2 {
+    @include mobile {
+        flex-direction: column-reverse;
+    }
 }
 
 // Bilder
-#images {
+.images-right, .images-left {
     display: flex;
     justify-content: center;
-    margin: 5rem 2rem 0 2rem;
-
+    margin: $img-right-margin;
 
     img {
         width: 200px;
@@ -30,11 +57,24 @@ header {
     }
 }
 
+.images-left {
+    margin: $img-left-margin;
+}
+
+.images-right, .images-left {
+    @include mobile {
+        margin: 4rem auto 0 auto;
+    }
+}
+
 // Articles
 article {
     max-width: 700px;
     margin: 0 auto 7rem auto;
 
+    @include mobile {
+        margin: 0 auto 4rem auto;
+    }
 
     p {
         margin-top: 1rem;
@@ -74,5 +114,5 @@ nav {
 // Footer
 footer {
     text-align: center;
-    padding: 2rem 2rem 6rem 2rem;
+    padding: $footer-margin
 }
