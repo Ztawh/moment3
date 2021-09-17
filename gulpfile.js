@@ -2,7 +2,6 @@
 const {src, dest, watch, series, parallel} = require("gulp");
 const concat = require("gulp-concat");
 const terser = require("gulp-terser").default;
-const cssnano = require("gulp-cssnano");
 const imagemin = require("gulp-imagemin");
 const browserSync = require("browser-sync").create();
 const sourcemaps = require("gulp-sourcemaps");
@@ -29,17 +28,6 @@ function jsTask() {
     .pipe(terser())
     .pipe(dest("pub/js"));
 };
-
-//CSS-task. Konkatinera
-// function cssTask(){
-//     return src(files.cssPath)
-//     .pipe(sourcemaps.init())
-//     .pipe(concat("main.css"))
-//     .pipe(cssnano())
-//     .pipe(sourcemaps.write())
-//     .pipe(dest("pub/css"))
-//     .pipe(browserSync.stream());
-// };
 
 //Scss-task.
 function sassTask(){

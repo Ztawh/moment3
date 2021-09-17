@@ -1,5 +1,8 @@
+// Skrivet av Amanda Hwatz Björkholm 2021.
+
 "use strict";
 
+// Lyssnar på när sidan laddats. Gömmer mobilmenyn
 window.addEventListener("load", function(){
     nav.style = "display: none";
 });
@@ -12,14 +15,8 @@ let nav = document.getElementById("navbar");
 icon.addEventListener("click", toggleNav);
 
 
-// Funktion
+// Funktion. Toggla mobilmenyn vid klick
 function toggleNav() {
-    // if(nav.style == "display: block"){
-    //     $("#navbar").slideUp("2s");
-    // } else if(nav.style == "display: none"){
-    //     $("#navbar").slideDown("2s");
-    // };
-
     $("#navbar").slideToggle();
 };
 

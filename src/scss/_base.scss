@@ -15,24 +15,28 @@ $img-right-margin: 5rem 0 0 2rem;
 $img-left-margin: 5rem 2rem 0 0;
 
 // Mixins
+// Media. Desktop
 @mixin desktop {
     @media screen and (min-width: 900px){
         @content;
     }
 }
 
+// Media. Mobiler
 @mixin mobile {
     @media screen and (max-width: 550px){
         @content;
     }
 }
 
+// Media. Kollar om användaren använder dark mode på datorn
 @mixin darkMode {
     @media screen and (prefers-color-scheme: dark){
         @content;
     }
 }
 
+// kollar vilken form elementet ska ha
 @mixin imgShape($circle: false) {
     @if $circle {
         border-radius: 50%;
