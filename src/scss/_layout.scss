@@ -10,8 +10,6 @@ body {
         background: $gradient-dark;
         background-repeat: no-repeat;
         background-attachment: fixed;
-        color: white;
-        height: 100vh;
     }
 }
 
@@ -22,21 +20,6 @@ body {
 
 main {
     padding: 0 1rem;
-}
-
-#nav-icon {
-    display: none;
-
-    @include mobile {
-        display: initial;
-        font-size: 2.5rem;
-        padding: 0 1rem;
-        position: fixed;
-        top: 0;
-        right: 0;
-        left: 0;
-        background: $mobile-nav-color;
-    }
 }
 
 header {
@@ -75,8 +58,11 @@ header {
     img {
         width: 200px;
         height: 200px;
-        border-radius: 50%;
         object-fit: cover;
+
+        // circle: true ger en rund bild
+        // circle: false ger fyrkan med avrundade hörn
+        @include imgShape($circle: true);
     }
 }
 
@@ -107,6 +93,21 @@ article {
 }
 
 // Navigation
+#nav-icon {
+    display: none;
+
+    @include mobile {
+        display: initial;
+        font-size: 2.5rem;
+        padding: 0 1rem;
+        position: fixed;
+        top: 0;
+        right: 0;
+        left: 0;
+        background: $mobile-nav-color;
+    }
+}
+
 nav {
     width: 100%;
     background: $gradient;
@@ -117,7 +118,6 @@ nav {
 
     @include darkMode {
         background: $gradient-dark;
-        
     }
 
     @include mobile {
@@ -126,7 +126,7 @@ nav {
     }
 
     ul {
-        display: flex;
+        @extend .flex-container; // Ärver display: flex.
         list-style-type: none;
         max-width: 2000px;
         margin: auto;

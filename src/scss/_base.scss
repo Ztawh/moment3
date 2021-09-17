@@ -5,7 +5,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&family=Unica+One&display=swap');
 
 // Variabler
-// linear-gradient(-70deg, #fca062, #cf6593, #9258b4, #23abd5);
 $gradient-dark: linear-gradient(-70deg, #e25b01, #e44d8e, #8f2fc7, #02495f);
 $gradient: linear-gradient(-70deg, #fca062, #cf6593, #a96bce, #23abd5);
 $link-color: lighten(#fca062, 80);
@@ -34,12 +33,10 @@ $img-left-margin: 5rem 2rem 0 0;
     }
 }
 
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
+@mixin imgShape($circle: false) {
+    @if $circle {
+        border-radius: 50%;
+    } @else {
+        border-radius: 20px;
+    }
 }
